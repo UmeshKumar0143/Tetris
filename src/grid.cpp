@@ -1,6 +1,7 @@
 #include "grid.h"
 #include <iostream>
 #include<vector>
+#include<raylib.h>
 Grid::Grid(){
     numRows = 20 ; 
     numCols = 10; 
@@ -39,4 +40,13 @@ std::vector<Color> Grid:: getCellColors(){
         Color cyan = {21,204,209,255};
         
         return {darkGrey, red , blue, green, yellow, orange, purple, cyan}; 
+}
+
+void Grid::draw(){
+    for(int row =0; row<numRows; row++){
+        for(int col = 0; col<numCols; col++){
+            int cellValue = grid[row][col]; 
+            DrawRectangle(cellSize*col+1, cellSize*row+1 , cellSize-1, cellSize-1, cellColors[cellValue]); 
+        }
+    }   
 }

@@ -13,6 +13,7 @@ int main(){
     while(!WindowShouldClose()){
         BeginDrawing(); 
         ClearBackground(darkblue); 
+        grid.draw(); 
         EndDrawing(); 
     }
 
