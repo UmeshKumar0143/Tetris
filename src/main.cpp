@@ -1,20 +1,19 @@
 #include <raylib.h>
-#include "grid.h"
-#include "blocks.cpp"
+#include "Game.h"
+
+
 int main(){
     Color darkblue  = {44, 44, 127, 255}; 
     InitWindow(300, 600, "tetrix"); 
     SetTargetFPS(60); 
 
-    Grid grid= Grid();
-    grid.printGrid();  
-    JBlock block = JBlock();          
+    Game g = Game(); 
+
 
     while(!WindowShouldClose()){
         BeginDrawing(); 
         ClearBackground(darkblue); 
-        grid.draw(); 
-        block.Draw(); 
+        g.Draw(); 
         EndDrawing(); 
     }
 
