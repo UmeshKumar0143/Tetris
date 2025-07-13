@@ -8,7 +8,6 @@ class Grid {
     int numCols; 
     int cellSize; 
     std::vector<Color>cellColors; 
-    std::vector<Color>getCellColors();   
    
    
     public:
