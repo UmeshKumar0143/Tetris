@@ -13,6 +13,12 @@ class Game{
     void Draw(); 
     std::vector<Block>getAllBlocks(); 
     Block getRadomBlock(); 
+    void HandleInput(); 
+    void MoveBlockLeft(); 
+    void MoveBlockRight(); 
+    void MoveBlockDown(); 
+    // void RotateBlock(); 
+    
     Grid grid; 
 
 }; 

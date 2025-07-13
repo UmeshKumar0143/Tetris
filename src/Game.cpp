@@ -31,3 +31,31 @@ void Game::Draw(){
     grid.draw(); 
     currentBlock.Draw(); 
 }
+
+void Game::HandleInput(){
+    int keyPressed = GetKeyPressed(); 
+    switch(keyPressed){
+        case KEY_LEFT: 
+        MoveBlockLeft(); 
+        break; 
+        case KEY_RIGHT: 
+        MoveBlockRight(); 
+        break; 
+        case KEY_DOWN: 
+        MoveBlockDown(); 
+        break; 
+        // case KEY_UP: 
+        // RotateBlock(); 
+        // break; 
+    }
+}
+
+void Game::MoveBlockLeft(){
+    currentBlock.Move(0,-1); 
+}
+void Game::MoveBlockRight(){
+    currentBlock.Move(0,1); 
+}
+void Game::MoveBlockDown(){
+    currentBlock.Move(1,0); 
+}

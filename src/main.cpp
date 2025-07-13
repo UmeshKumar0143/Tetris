@@ -11,6 +11,7 @@ int main(){
 
 
     while(!WindowShouldClose()){
+        g.HandleInput(); 
         BeginDrawing(); 
         ClearBackground(darkblue); 
         g.Draw(); 
