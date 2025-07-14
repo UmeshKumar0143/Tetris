@@ -11,7 +11,8 @@ class Game{
     void LockBlock(); 
     void RotateBlock();     
     bool BlockFits(); 
-    
+    bool gameOver; 
+    void reset(); 
     public: 
     Game(); 
     void Draw(); 
