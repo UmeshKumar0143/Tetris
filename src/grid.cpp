@@ -40,3 +40,8 @@ void Grid::draw(){
         }
     }   
 }
+
+bool Grid::CheckCellOutside(int row, int col){
+        if(col>=0 && col<numCols && row>=0 && row<numRows) return false; 
+        return true; 
+}

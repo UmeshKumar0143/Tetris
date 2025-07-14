@@ -1,6 +1,6 @@
 #pragma once 
 #include<vector>
-#include <raylib.h>
+#include <raylib.h> 
 class Grid {
    
     private:
@@ -12,7 +12,8 @@ class Grid {
    
     public:
     Grid(); 
-    void initializeGrid(); 
+    bool CheckCellOutside(int row , int col); 
+    void initializeGrid();  
     void printGrid();  
     void draw(); 
     int grid[20][10];
