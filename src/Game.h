@@ -7,7 +7,11 @@ class Game{
     std::vector<Block>blocks; 
     Block currentBlock; 
     Block nextBlock; 
-
+    bool isBlockOutside(); 
+    void LockBlock(); 
+    void RotateBlock();     
+    bool BlockFits(); 
+    
     public: 
     Game(); 
     void Draw(); 
@@ -17,9 +21,6 @@ class Game{
     void MoveBlockLeft(); 
     void MoveBlockRight(); 
     void MoveBlockDown(); 
-    void RotateBlock();     
-    bool isBlockOutside(); 
-    void LockBlock(); 
     Grid grid; 
 
 }; 
