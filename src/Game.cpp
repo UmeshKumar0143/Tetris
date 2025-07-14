@@ -91,6 +91,7 @@ void Game:: LockBlock(){
     }
     currentBlock = nextBlock; 
     nextBlock = getRadomBlock(); 
+    grid.ClearFullRows(); 
 }
 
 
