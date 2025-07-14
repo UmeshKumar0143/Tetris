@@ -12,10 +12,11 @@ Game::Game(){
 
 
 Block Game::getRadomBlock(){
-    int randomIndex = rand() % blocks.size(); 
+   
     if(blocks.empty()){
         blocks  = getAllBlocks(); 
     }
+    int randomIndex = rand() % blocks.size(); 
     Block block = blocks[randomIndex]; 
     blocks.erase(blocks.begin()+randomIndex); 
     return block; 
@@ -61,7 +62,11 @@ void Game::MoveBlockRight(){
 }
 void Game::MoveBlockDown(){
     currentBlock.Move(1,0); 
-    if(isBlockOutside()) currentBlock.Move(-1,0); 
+    if(isBlockOutside()) 
+    {
+        currentBlock.Move(-1,0); 
+        LockBlock();     
+      }      
 }
 
 void Game::RotateBlock(){
@@ -77,4 +82,13 @@ bool Game::isBlockOutside(){
             if(grid.CheckCellOutside(item.row, item.col)) return true; 
     }
     return false; 
+}
+
+void Game:: LockBlock(){
+    std::vector<Position>tiles = currentBlock.getCellPosition(); 
+    for(Position item : tiles){
+        grid.grid[item.row][item.col]  = currentBlock.id; 
+    }
+    currentBlock = nextBlock; 
+    nextBlock = getRadomBlock(); 
 }

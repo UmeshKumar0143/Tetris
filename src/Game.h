@@ -19,6 +19,7 @@ class Game{
     void MoveBlockDown(); 
     void RotateBlock();     
     bool isBlockOutside(); 
+    void LockBlock(); 
     Grid grid; 
 
 }; 
