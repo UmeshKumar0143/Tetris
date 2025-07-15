@@ -1,6 +1,6 @@
 #include <raylib.h>
 #include "Game.h"
-
+#include "colors.h"
 double lastUpdatedTime = 0; 
 
 bool isEventTriggerd(double interval){
@@ -14,12 +14,12 @@ bool isEventTriggerd(double interval){
 
 
 int main(){
-    Color darkblue  = {44, 44, 127, 255}; 
-    InitWindow(300, 600, "tetrix"); 
+    InitWindow(500, 620, "tetrix"); 
     SetTargetFPS(60); 
 
     Game g = Game(); 
 
+    Font  font = LoadFontEx("/Font/monogram.ttf", 64, 0, 0); 
 
     while(!WindowShouldClose()){
         g.HandleInput(); 
@@ -28,6 +28,14 @@ int main(){
         }
         BeginDrawing(); 
         ClearBackground(darkblue); 
+        DrawTextEx(font, "Score",{365, 15}, 38, 2, WHITE); 
+        DrawTextEx(font, "Next",{370, 175}, 38, 2, WHITE); 
+        if(g.gameOver){
+            DrawTextEx(font, "Game Over",{320, 450}, 38, 2, WHITE); 
+
+        }
+        DrawRectangleRounded({324,55, 170, 60}, 0.3, 6, lightBlue); 
+        DrawRectangleRounded({324,215, 170, 180}, 0.3, 6, lightBlue); 
         g.Draw(); 
         EndDrawing(); 
     }

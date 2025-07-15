@@ -11,9 +11,9 @@ class Game{
     void LockBlock(); 
     void RotateBlock();     
     bool BlockFits(); 
-    bool gameOver; 
     void reset(); 
     public: 
+    bool gameOver; 
     Game(); 
     void Draw(); 
     std::vector<Block>getAllBlocks(); 
