@@ -71,7 +71,7 @@ void Grid::MoveRowdown(int row, int CompeleteRows){
     }
 }
 
-void Grid::ClearFullRows( ){
+int  Grid::ClearFullRows( ){
     int compeleted = 0; 
     for(int row = numRows-1; row>=0 ; row--){
         if(isRowFull(row)){
@@ -81,4 +81,5 @@ void Grid::ClearFullRows( ){
         MoveRowdown(row, compeleted); 
         }
     }
+    return compeleted ; 
 }

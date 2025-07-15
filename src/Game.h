@@ -12,6 +12,8 @@ class Game{
     void RotateBlock();     
     bool BlockFits(); 
     void reset(); 
+    void updateScore(int linesCleared, int moveDownPoints); 
+
     public: 
     bool gameOver; 
     Game(); 
@@ -23,5 +25,6 @@ class Game{
     void MoveBlockRight(); 
     void MoveBlockDown(); 
     Grid grid; 
+    int score; 
 
 }; 

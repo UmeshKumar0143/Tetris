@@ -20,5 +20,5 @@ class Grid {
     void draw(); 
     int grid[20][10];
     bool isCellEmpty(int row, int col); 
-    void ClearFullRows(); 
+    int ClearFullRows(); 
 }; 

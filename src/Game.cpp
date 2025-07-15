@@ -8,6 +8,7 @@ Game::Game(){
     currentBlock = getRadomBlock(); 
     gameOver = false; 
     nextBlock = getRadomBlock(); 
+    score = 0; 
 }
 
 
@@ -48,6 +49,7 @@ void Game::HandleInput(){
         break; 
         case KEY_DOWN: 
         MoveBlockDown(); 
+        updateScore(0,1); 
         break; 
         case KEY_UP: 
         RotateBlock(); 
@@ -127,7 +129,8 @@ void Game:: LockBlock(){
     if(!BlockFits()) gameOver = true; 
     nextBlock = getRadomBlock(); 
 
-    grid.ClearFullRows(); 
+    int rowsCleared = grid.ClearFullRows(); 
+    updateScore(rowsCleared, 0); 
 }
 
 
@@ -151,4 +154,22 @@ void Game::reset(){
     blocks = getAllBlocks(); 
     currentBlock = getRadomBlock(); 
     nextBlock  = getRadomBlock(); 
+    score = 0; 
+}
+
+void Game:: updateScore(int linesCleared, int movedownPoints){
+    switch(linesCleared){
+        case 1: 
+        score+=100; 
+        break;
+        case 2: 
+        score+=200; 
+        break;
+        case 3: 
+        score+= 500; 
+        break;
+        default: 
+        break;
+    }
+    score+= movedownPoints; 
 }
