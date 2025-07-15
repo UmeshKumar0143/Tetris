@@ -36,7 +36,6 @@ int main(){
             DrawTextEx(font, "GAME OVER", {320, 450}, 38, 2, WHITE);
         }
         DrawRectangleRounded({320, 55, 170, 60}, 0.3, 6, lightBlue);
-        std::cout<<g.score<<std::endl; 
         char scoreText[10];
         sprintf(scoreText, "%d", g.score);
         Vector2 textSize = MeasureTextEx(font, scoreText, 38, 2);
